@@ -1,0 +1,18 @@
+version: '3'
+services:
+  lab:
+    build:
+      context: .
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    volumes:
+      - ../:/work
+    ports:
+      - 8888:8888
+      - 6006:6006
+    shm_size: '32gb'
