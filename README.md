@@ -11,11 +11,11 @@ PointPaintingの学習、推論環境及び、学習済みモデルを公開し�
 ## 動作確認
 
 次の環境で動作確認済みです。
-- Ubuntu 18.04
-- Python 3.7
+- Ubuntu 20.04
+- Python 3.8
 - PyTorch 1.7.1
 - GPU NVIDIA Tesla K80
-- CUDA 10.2
+- CUDA 11.3.1
 
 また、環境構築にDockerコンテナをサポートしています。
 詳しくは、[docker/README.md](docker/README.md)をご参照ください。

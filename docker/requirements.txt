@@ -14,7 +14,7 @@ seaborn
 plotly
 tqdm
 
---find-links https://download.pytorch.org/whl/cu102/torch_stable.html
-torch==1.7.1
---find-links https://download.pytorch.org/whl/cu102/torch_stable.html
-torchvision==0.8.2
+--find-links https://download.pytorch.org/whl/torch_stable.html
+torch==1.7.1+cu110
+--find-links https://download.pytorch.org/whl/torch_stable.html
+torchvision==0.8.2+cu110
