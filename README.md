@@ -1,11 +1,12 @@
 # 概要
 
-本リポジトリは、第6回AIエッジコンテストのリファレンス環境（ソフトウェア）です。  
+本リポジトリは、[第6回AIエッジコンテスト](https://signate.jp/competitions/732)のリファレンス環境（ソフトウェア）です。  
 PointPaintingの学習、推論環境及び、学習済みモデルを公開しています。
 
 >
 > リファレンス環境（ソフトウェア）は、段階的なリリースを予定しております。  
-> 本リポジトリでは、Step1として、オープンデータKITTIを用いたリファレンス環境を構築しています。  
+> 本リポジトリでは、Step1として、オープンデータKITTIを用いたリファレンス環境を構築しています。 
+> PointPaintingの手法の理解にお役立てください。  
 > Step2では、第6回AIエッジコンテストの配布データを用いたリファレンス環境を公開する予定です。
 
 ## 動作確認
@@ -35,6 +36,7 @@ PointPaintingの学習、推論環境及び、学習済みモデルを公開し�
   - [インストール](#インストール)
   - [使い方](#使い方)
     - [データセットの用意](#データセットの用意)
+    - [学習済みモデル](#学習済みモデル)
     - [ペインティング処理](#ペインティング処理)
     - [KITTIデータセットの前処理](#kittiデータセットの前処理)
     - [3D物体検出モデルの学習](#3d物体検出モデルの学習)
@@ -97,12 +99,12 @@ pip install ./dist/spconv*.whl
 - camera calibration matrices(16MB)
 - training labels of object data set(5MB)
 
-なお、本リポジトリではtestingデータは使用しませんので、testingディレクトリの展開は不要です。
+なお、本リポジトリではtrainingデータのみを使用し、testingデータは使用しませんので、testingディレクトリの展開は不要です。
 
 ### 学習済みモデル
 
-3D物体検出モデルは公開の学習済みモデルをダウンロードして利用することができます。
-ダウンロードしたzipファイルを展開して、`pointpainting`ディレクトリを`second.pytorch/checkpoints`配下においてください。
+3D物体検出モデルは公開の学習済みモデルは、[Google Drive](https://drive.google.com/file/d/1uIC9u8nEDkQRsQEuvzVzYIst5azB_OIL/view?usp=sharing)よりダウンロードして利用することができます。
+ダウンロードしたcheckpoints_pointpainting.zipを展開して、`pointpainting`ディレクトリを`second.pytorch/checkpoints`配下においてください。
 
 ```
 └ second.pytorch
