@@ -84,11 +84,12 @@ pip install ./dist/spconv*.whl
 
 ```
 └─ data
-     └─ training    <-- 7481 train data
-          ├── image_2
-          ├── calib
-          ├── label_2
-          └── velodyne
+    └─ kitti
+        └─ training    <-- 7481 train data
+            ├── image_2
+            ├── calib
+            ├── label_2
+            └── velodyne
 ```
 
 [KITTI ダウンロードリンク](http://www.cvlibs.net/datasets/kitti/eval_object.php?obj_benchmark=3d)
@@ -125,12 +126,13 @@ pip install ./dist/spconv*.whl
 
 ```
 └─ data
-     └─ training
-          ├── image_2
-          ├── calib
-          ├── label_2
-          ├── velodyne
-          └── velodyne_painted  <- 生成されます
+    └─ kitti
+        └─ training
+            ├── image_2
+            ├── calib
+            ├── label_2
+            ├── velodyne
+            └── velodyne_painted  <- 生成されます
 ```
 
 
@@ -138,21 +140,23 @@ pip install ./dist/spconv*.whl
 
 3D物体検出モデルの学習と推論を実行するための事前準備を行います。  
 `notebook/1-2_create_dataset_kitti.ipynb`を開き、コードを順番に実行してください。  
-削減した点群データ(velodyne_reduced)と、学習と推論に必要なデータセットのメタ情報ファイル(pkl)を生成します。
+削減した点群データ(velodyne_painted_reduced)と、学習と推論に必要なデータセットのメタ情報ファイル(pkl)を生成します。
 
 ```
 └─ data
-     ├─ training
-     |    ├── image_2
-     |    ├── calib
-     |    ├── label_2
-     |    ├── velodyne
-     |    ├── velodyne_painted
-     |    └── velodyne_reduced  <- 生成されます
-     ├ kitti_gt_database        <- 生成されます
-     ├ kitti_infos_train.pkl    <- 生成されます
-     ├ kitti_infos_val.pkl      <- 生成されます
-     └ kitti_infos_trainval.pkl <- 生成されます
+    └─ kitti    
+        ├─ training
+        |    ├── image_2
+        |    ├── calib
+        |    ├── label_2
+        |    ├── velodyne
+        |    ├── velodyne_painted
+        |    └── velodyne_painted_reduced  <- 生成されます
+        ├ gt_database              <- 生成されます
+        ├ kitti_dbinfos_train.pkl  <- 生成されます
+        ├ kitti_infos_train.pkl    <- 生成されます
+        ├ kitti_infos_val.pkl      <- 生成されます
+        └ kitti_infos_trainval.pkl <- 生成されます
 ```
 
 ### 3D物体検出モデルの学習
@@ -184,7 +188,7 @@ pip install ./dist/spconv*.whl
 推論結果は、`second.pytorch/checkpoints/{model_dir}/results` ディレクトリにpklファイルとして保存されます。
 
 ```
-└ second.pytorc
+└ second.pytorch
      └ checkpoints
           └ {model_dir}
                 ├─ results    <- 生成されます
